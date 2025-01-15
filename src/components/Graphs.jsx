@@ -9,15 +9,15 @@ const Graphs = () => {
   const [graphType, setGraphType] = useState(0);
 
   return (
-    <div className="w-[100vw] min-h-[100vh] h-[auto] p-10 bg-gray-300 flex flex-col items-center gap-5">
-      <div className="ph-2 bg-white flex flex-row items-center justify-center cursor-pointer">
+    <div className="w-[100vw] min-h-[100vh] h-[auto] p-10 bg-gray-300 flex flex-col items-center gap-5 ">
+      <div className="ph-2 bg-white flex flex-row items-center justify-center cursor-pointer mt-16">
         <h3 onClick={() => setGraphType(1)}>Line</h3>
         <hr className=" w-[15px] h-[1.2px] bg-black rotate-90" />
         <h3 onClick={() => setGraphType(2)}>Bar</h3>
         <hr className=" w-[15px] h-[1.2px] bg-black rotate-90" />
         <h3 onClick={() => setGraphType(3)}>Doughnut</h3>
       </div>
-      <div className="w-[90%] h-80 bg-white rounded-md p-5">
+      <div className="w-[90%] h-96 bg-white rounded-md p-5 py-10">
         chart
         {graphType == 2 ? (
           <Bar
@@ -25,7 +25,7 @@ const Graphs = () => {
               labels: ["A", "B", "C"],
               datasets: [
                 {
-                  label: "Revenue",
+                  label: "Data",
                   data: [200, 300, 500],
                 },
               ],
@@ -34,11 +34,11 @@ const Graphs = () => {
         ) : graphType == 1 ? (
           <Line
             data={{
-              labels: ["A", "B", "C"],
+              labels: ["A", "B", "C", "D"],
               datasets: [
                 {
-                  label: "Revenue",
-                  data: [200, 300, 500],
+                  label: "Data",
+                  data: [200, 400, 300, 500],
                 },
               ],
             }}
@@ -49,7 +49,7 @@ const Graphs = () => {
               labels: ["A", "B", "C"],
               datasets: [
                 {
-                  label: "Revenue",
+                  label: "Data",
                   data: [200, 300, 500],
                 },
               ],
